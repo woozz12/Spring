@@ -8,35 +8,16 @@
 </head>
 <body>
 
-	<h2>게시글 목록</h2>
-	<table border="1">
-		<tr>
-			<th>번호</th>
-			<th>제목</th>
-			<th>작성자</th>
-			<th>비고</th>
-		</tr>
-
-		<c:forEach var="article" items="">
-			<tr>
-				<td></td>
-				<td><a href="#"></a></td>
-				<td></td>
-				<td><a href="#">[삭제]</a></td>
-			</tr>
-		</c:forEach>
-
-	</table>
-
-	<a href="<c:url value='/board/write' />">게시물 작성하기</a>
-	<h2>???번 게시물 내용</h2>
+	
+	
+	<h2>${article.boardNo }번 게시물 내용</h2>
 	<p>
-		# 작성자: ??? <br> # 제목: ??? <br> # 내용:
-		<textarea rows="5" readonly>???</textarea>
+		# 작성자: ${article.writer } <br> # 제목: ${article.title } <br> # 내용:
+		<textarea rows="5" readonly>${article.content }</textarea>
 	</p>
 
-	<a href="#">글 목록 보기</a>
-	<a href="#">글 수정 하기</a>
+	<a href="${pageContext.request.contextPath }/baord/list">글 목록 보기</a>
+	<a href="${pageContext.request.contextPath }/board/modify?boardNo=${article.boardNo">글 수정 하기</a>
 
 </body>
 </html>
