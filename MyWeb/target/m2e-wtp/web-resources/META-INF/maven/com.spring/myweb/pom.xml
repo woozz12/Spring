@@ -9,7 +9,6 @@
 	<packaging>war</packaging>
 	<version>1.0.0-BUILD-SNAPSHOT</version>
 
-
 	<!-- 자바버전, 스프링 버전 변경 -->
 	<properties>
 		<java-version>11</java-version>
@@ -98,9 +97,8 @@
 
 
 
-
 		<!-- Servlet -->
-		<!-- 참조하는 서블릿 버전 3.1.0선언 (artufactId가 달라져요) -->
+		<!-- 참조하는 서블릿 버전 3.1.0 선언 (artifactId가 달라져요) -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
@@ -119,7 +117,7 @@
 			<version>1.2</version>
 		</dependency>
 
-		<!-- spring test -->
+		<!-- spring-test -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
@@ -128,11 +126,10 @@
 		</dependency>
 
 
-
 		<!-- Test <dependency> <groupId>junit</groupId> <artifactId>junit</artifactId> 
 			<version>4.7</version> <scope>test</scope> </dependency> -->
 
-		<!-- junit-jupiter-api (Junit5: 테스트 환경을 구성해 주고 여러 기능을 제공해주는 라이브러리) -->
+		<!-- junit-jupiter-api (Junit5: 테스트 환경을 구성해 주고, 여러 기능을 제공하는 라이브러리) -->
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-api</artifactId>
@@ -141,6 +138,7 @@
 		</dependency>
 
 
+		<!-- lombok 라이브러리 -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
@@ -169,8 +167,7 @@
 			<version>8.0.33</version>
 		</dependency>
 
-
-		<!--mybatis 라이브러리 -->
+		<!-- mybatis 라이브러리 -->
 		<dependency>
 			<groupId>org.mybatis</groupId>
 			<artifactId>mybatis</artifactId>
@@ -192,12 +189,10 @@
 		</dependency>
 
 
-
 	</dependencies>
 
 
-
-	<!-- 메이븐 플랫폼 기반 설정(배포 및 빌드 과정에 대한 설정) -->
+	<!-- 메이븐 플랫폼 기반 설정 (배포 및 빌드 과정에 대한 설정) -->
 	<build>
 		<plugins>
 			<plugin>
@@ -219,7 +214,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.5.1</version>
+				<version>3.5.1</version>
 				<configuration>
 					<source>11</source>
 					<target>11</target>
