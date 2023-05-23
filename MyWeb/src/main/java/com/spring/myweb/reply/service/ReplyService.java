@@ -6,16 +6,17 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Service;
 
 import com.spring.myweb.command.ReplyVO;
 import com.spring.myweb.reply.mapper.IReplyMapper;
 import com.spring.myweb.util.PageVO;
-
+@Service
 public class ReplyService implements IReplyService {
 
 	@Autowired
     private IReplyMapper mapper;
-	
+	@Autowired
 	private BCryptPasswordEncoder encoder;
 	
 	@Override
@@ -40,20 +41,21 @@ public class ReplyService implements IReplyService {
 
 	@Override
 	public int getTotal(int bno) {
-		// TODO Auto-generated method stub
-		return 0;
+
+		return mapper.getTotal(bno);
 	}
 
 	@Override
 	public boolean pwCheck(ReplyVO vo) {
-		// TODO Auto-generated method stub
-		return false;
+		
+		String dbpw = mapper.pwCheck(vo.getRno());
+		
+		return encoder.matches(vo.getReplyPw(), dbpw);
 	}
 
 	@Override
 	public void update(ReplyVO vo) {
-		// TODO Auto-generated method stub
-
+		mapper.update(vo);
 	}
 
 	@Override

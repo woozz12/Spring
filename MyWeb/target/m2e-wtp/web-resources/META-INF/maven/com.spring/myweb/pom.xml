@@ -194,6 +194,14 @@
 			<artifactId>jackson-databind</artifactId>
 			<version>2.14.2</version>
 		</dependency>
+		
+				<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.datatype/jackson-datatype-jsr310 -->
+		<dependency>
+		    <groupId>com.fasterxml.jackson.datatype</groupId>
+		    <artifactId>jackson-datatype-jsr310</artifactId>
+		    <version>2.14.2</version>
+		</dependency>
+
 
 
 		<!-- javamail에서 mail을 보내기 위해 필요한 라이브러리 -->
@@ -217,6 +225,7 @@
 			<artifactId>spring-security-web</artifactId>
 			<version>5.3.13.RELEASE</version>
 		</dependency>
+		
 
 
 
