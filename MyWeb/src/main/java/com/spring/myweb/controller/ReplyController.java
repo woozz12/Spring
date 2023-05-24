@@ -4,7 +4,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.ibatis.annotations.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -59,11 +61,23 @@ public class ReplyController {
 	
 	//댓글 수정 요청
 	@PutMapping("/{rno}")
-	public String update(@PathVariable int rno , @RequestBody ReplyVO vo) {
+	public String update(@PathVariable int rno, @RequestBody ReplyVO vo) {
 		vo.setRno(rno);
-		if (service.pwCheck(vo)) {
+		
+		if(service.pwCheck(vo)) {
 			service.update(vo);
 			return "updateSuccess";
+		} else {
+			return "pwFail";
+		}
+	}
+	
+	@DeleteMapping("/{rno}")
+	public String delete(@PathVariable int rno, @RequestBody ReplyVO vo) {
+		vo.setRno(rno);
+		if(service.pwCheck(vo)) {
+			service.delete(rno);
+			return "delSuccess";
 		} else {
 			return "pwFail";
 		}
